@@ -40,8 +40,8 @@ nav ul li a {
 }
 
 header img {
-    margin-top: 3rem;
-    width: 100%;
+  margin-top: 3rem;
+  width: 100%;
 }
 
 main {
@@ -95,19 +95,19 @@ section#cards div.card a#editar {
 }
 
 section#cards div.card a#apagar {
-    padding: 0.6rem;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    font-size: 1rem;
-    background-color: #fff;
-    border: solid 1px #ff0000;
-    color: #ff0000;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    text-decoration: none;
-    margin-top: 1rem;
-  }
+  padding: 0.6rem;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 1rem;
+  background-color: #fff;
+  border: solid 1px #ff0000;
+  color: #ff0000;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  margin-top: 1rem;
+}
 
 section#cards div.card a#editar:hover {
   background-color: #0077ff;
@@ -115,15 +115,15 @@ section#cards div.card a#editar:hover {
 }
 
 section#cards div.card a#apagar:hover {
-    background-color: #ff0000;
-    color: #fff;
-  }
+  background-color: #ff0000;
+  color: #fff;
+}
 
 section#cadastro {
   display: flex;
   justify-content: center;
 
-  padding: 5rem;
+  padding: 10rem 5rem;
 }
 
 section#cadastro img {
@@ -174,26 +174,153 @@ section#cadastro form button:hover {
   color: #fff;
 }
 
-
 footer {
-    background-color: #dc0a2d;
-    padding: 3rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  background-color: #dc0a2d;
+  padding: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 footer p {
-    width: 100%;
-    color: #fff;
-    text-align: center;
-    font-size: 1.2rem;
-    padding: .3rem;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 0.3rem;
 }
 
-
-footer p a{
-    text-decoration: none;
-    color: #fff;
-    font-weight: 600;
+footer p a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
 }
+
+.modal-overlay {
+  background-color: #00000050;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.modal {
+  margin: 1rem;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  min-height: 300px;
+  background-color: #fff;
+  border-radius: 11px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #dc0a2d;
+  padding: 1rem;
+  color: #fff;
+}
+
+.modal-header a#close-modal-put {
+  font-size: 1.4rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.modal-body {
+  padding: 0.5rem 1rem;
+  flex: 1;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.form-modal {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-modal input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  outline: none;
+  border: solid 2px #ccc;
+}
+
+.form-modal label {
+  color: rgb(112, 112, 112);
+  padding-top: 0.5rem;
+}
+
+.form-modal button {
+  padding: 0.6rem;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #40af00;
+  border: solid 1px #40af00;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-modal button:hover {
+  background-color: #40af00;
+  color: #fff;
+}
+
+.modal-body p {
+  width: 100%;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+div#btns-del {
+  display: flex;
+  margin: 0 auto;
+}
+
+div#btns-del a {
+  padding: 0.7rem;
+  text-decoration: none;
+  width: 100%;
+  margin: 2rem 1rem 1rem;
+  border-radius: 3px;
+}
+
+div#btns-del a#no {
+  color:#dc0a2d;
+  border: solid 1px #dc0a2d;
+  transition: all .3s ease-in-out;
+}
+
+div#btns-del a#no:hover{
+  color:#fff;
+  background-color:#dc0a2d;
+}
+
+div#btns-del a#yes {
+  color:#40af00;
+  border: solid 1px #40af00;
+  transition: all .3s ease-in-out;
+}
+
+div#btns-del a#yes:hover{
+  color:#fff;
+  background-color:#40af00;
+}
+
