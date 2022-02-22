@@ -14,6 +14,10 @@
         <img src="/img/pokedex.png" alt="Pokedex">
 
         <div>
+            <% if(message != "") { %>
+                <%- include('./components/alerts') %>
+            <% } %>
+
             <h2>Cadastre um novo Pokemon!</h2>
 
             <form action="/create" method="POST">
@@ -39,6 +43,7 @@
 
     <%- include('./components/footer') %>
     
+    <script src="/script.js"></script>
 </body>
 
 </html>

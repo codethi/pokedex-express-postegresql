@@ -9,43 +9,56 @@
 
     <%- include('./components/nav') %>
 
-    <header>
-        <img src="/img/banner.png" alt="banner">
-    </header>
+    <% if (pokemonSearch.length == 0) {%>
+        <header>
+            <img src="/img/banner.png" alt="banner">
+            <% if(message !="" ) { %>
+                <%- include('./components/alerts') %>
+                    <% } %>
+        </header>
+    <% } %>
 
+        <main>
+        
+        <% if (pokemonSearch.length == 0) {%>
+            <section id='cards'>
 
-    <main>
-
-        <section id='cards'>
-
-            <% pokedex.forEach((pokemon)=> { %>
-                <div class="card">
-                    <img src="<%= pokemon.imagem %>" alt="">
-                    <h3>
-                        <%= pokemon.nome %>
-                    </h3>
-                    <p class="descricao">
-                        <%= pokemon.descricao %>
-                    </p>
-                    <p>Tipo: <%= pokemon.tipo %>
-                    </p>
-                    <a id="editar" href="/getById/<%= pokemon.id %>/put">Editar</a>
-                    <a id="apagar"  href="/getById/<%= pokemon.id %>/delete">Apagar</a>
-                </div>
+                <% pokedex.forEach((pokemon)=> { %>
+                    <%- include('./components/cards', {poke: pokemon})%>
                 <% }) %>
 
-        </section>
-    </main>
+            </section>
 
-    <% if (pokemonPut != null) {%>
-        <%- include('./components/modalPut') %>
-    <% } %>
 
-    <% if (pokemonDel != null) {%>
-        <%- include('./components/modalDel') %>
-    <% } %>
+        <% } else { %>
 
-    <%- include('./components/footer') %>
+            <div id="result-search-space">
+                <h2>Resultado da Pesquisa</h2>
+                <a href="/">Todos os Pokemons</a>
+            </div>
+
+            <section id='cards'>
+
+                <% pokemonSearch.forEach((pokemon)=> { %>
+                    <%- include('./components/cards' , {poke: pokemon})%>
+                <% }) %>
+
+            </section>
+        <% } %>
+
+        </main>
+
+        <% if (pokemonPut !=null) {%>
+            <%- include('./components/modalPut') %>
+                <% } %>
+
+                    <% if (pokemonDel !=null) {%>
+                        <%- include('./components/modalDel') %>
+                            <% } %>
+
+                                <%- include('./components/footer') %>
+
+                                    <script src="/script.js"></script>
 
 </body>
 

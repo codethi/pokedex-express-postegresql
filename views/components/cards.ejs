@@ -1,0 +1,20 @@
+<div class="card">
+    <div class="dropdown">
+        <div class="dropdown-button">
+            <i class="bi bi-three-dots-vertical"></i>
+        </div>
+        <div class="dropdown-content">
+            <a id="editar" href="/getById/<%= poke.id %>/put">Editar</a>
+            <a id="apagar" href="/getById/<%= poke.id %>/delete">Apagar</a>
+        </div>
+    </div>
+    <img src="<%= poke.imagem %>" alt="">
+    <h3>
+        <%= poke.nome %>
+    </h3>
+    <p class="descricao">
+        <%= poke.descricao %>
+    </p>
+    <p>Tipo: <%= poke.tipo %>
+    </p>
+</div>
