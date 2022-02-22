@@ -35,4 +35,10 @@ const Pokemon = connection.define(
   }
 );
 
+const initTable = async () => {
+  await Pokemon.sync();
+};
+
+initTable();
+
 module.exports = Pokemon;
